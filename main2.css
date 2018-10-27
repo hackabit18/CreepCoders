@@ -1,0 +1,326 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+}
+
+
+
+
+.navbarClass{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    /* overflow: hidden; */
+}
+.navbarClass h3{
+    margin: 0;
+    padding-left: 40px;
+    line-height: 80px;
+}
+.navbarClass h3 > a{
+    padding: 15px;
+    font-size: 26px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #f44283;
+}
+.navbarClass ul{
+    display: flex;
+    margin: 0;
+}
+.navbarClass ul li{
+    list-style: none;
+    margin: 0 10px;
+    line-height: 80px;
+}
+.floatRight{
+    position: absolute;
+    right:40px;
+}
+.floatRight1{
+    position: absolute;
+    right: 140px;
+}
+.navbarClass ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 15px;
+    transition: .3s;
+    line-height: 35px;
+    border-radius: 35px;
+    font-family: arial;
+    font-size: 14px;
+    text-transform: uppercase
+}
+.navbarClass ul li:nth-child(5) a{
+    border: 2px solid #f44283;
+}
+.navbarClass ul li:hover:nth-child(4) a{
+    border: 2px solid #f44283;
+}
+.navbarClass ul li:hover a{
+    background: #f44283;
+}
+
+
+
+
+
+
+
+
+
+
+
+.loginContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(intro-bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.loginContainer::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .6;
+}
+.loginContainer .inputImage{
+    height: 400px;
+    width: 400px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    border-radius: 5px;
+}
+.loginContainer input[type="submit"]{
+    width: 400px;
+    line-height: 35px;
+    position: relative;
+    left: 50%;
+    top: 110px;
+    transform: translateX(-50%);
+    border: 2px solid #f44283;
+    outline: none;
+    background: #f44283;
+    border-radius: 35px;
+    color: #fff;
+    font-size: 16px;
+    font-family: tahoma;
+    font-weight: 600;   
+    text-transform: uppercase;
+    transition: .5s;
+    cursor: pointer;
+}
+.loginContainer .getStartClass{
+    position: relative;
+    top: 130px;
+    text-align: center;
+}
+.loginContainer .getStartClass p{
+    font-size: 12px;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+.loginContainer .getStartClass a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #fff;
+    margin: 0;
+    padding: 5px;
+    line-height: 35px;
+    border-radius: 35px;
+    transition: .5s;
+}
+.loginContainer .getStartClass a:hover{
+    background: #f44283;
+    border-color: #f44283;
+    color: #fff;
+    padding: 10px;
+    /* font-weight: bold; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.signupMainContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+    background: url(bg.jpg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.signupMainContainer::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .8;
+}
+.signupMainContainer .signupImage{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.signupMainContainer .signupImage .imageFrame{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    float: right;
+    width: 400px;
+    height: 400px;
+    background: none;  
+}
+.signupMainContainer .signupContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.signupMainContainer .signupContainer form{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 10px 10px 20px;
+}
+.signupMainContainer .signupContainer form h1{
+    color: #f44283;
+    margin: 0;
+    font-size: 36px;
+}
+.signupMainContainer .signupContainer form input{
+    width: 95%;
+    margin: 5px 0;
+    line-height: 35px;
+    border-radius: 35px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,.2);
+    transition: .5s;
+    color: #fff;
+    font-weight: bold;
+}
+.signupMainContainer .signupContainer form input[type="submit"]{
+    background: #f44283;
+    color: #000;
+    cursor: pointer;
+}
+.signupMainContainer .signupContainer form input:focus{
+    width: 100%;
+}
+.signupMainContainer .signupContainer form input:focus[type="submit"]{
+    width: 95%;
+}
+.signupMainContainer .signupContainer form input::placeholder{
+    color: #fff;
+    font-weight: normal;
+    opacity: .4;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loginWithPassContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url(bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+.loginWithPassContainer::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .8;
+}
+.loginWithPassContainer form{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+.loginWithPassContainer form h1{
+    color: #f44283;
+}
+.loginWithPassContainer form input{
+    width: 95%;
+    margin: 5px 0;
+    line-height: 35px;
+    border-radius: 35px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,.2);
+    transition: .5s;
+    color: #fff;
+    font-weight: bold;
+}
+.loginWithPassContainer form input[type="submit"]{
+    background: #f44283;
+    color: #000;
+    cursor: pointer;
+}
+.loginWithPassContainer form input:focus{
+    width: 100%;
+}
+.loginWithPassContainer form input:focus[type="submit"]{
+    width: 95%;
+}
+.loginWithPassContainer form input::placeholder{
+    color: #fff;
+    font-weight: normal;
+    opacity: .4;   
+}
