@@ -10,10 +10,10 @@ if(!isset($_SESSION['id'])){
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Account Settings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <link rel="stylesheet" href="../main2.css">     
+   <link rel="stylesheet" href="../css/main3.css">     
 
    <!-- script
    ================================================== -->   
@@ -63,27 +63,74 @@ if(!isset($_SESSION['id'])){
             ?>
         </ul>
     </div>
+    <?php
 
-    <div class="tasks-container">
-        <div class="row">
-            <div class="profile-card">
-                <div class="profile-image">
-                    <img src="../<?php 
-                        $conn = new mysqli("localhost", "root", "","pickup");
-                        if(!$conn->connect_error){
-                            $id = $_SESSION['id'];
-                            $sql = "SELECT url from snapshot WHERE id='$id' ";
-                            $results1 = $conn->query($sql);
-                            $rows1= $results1->fetch_assoc();
-                            echo $rows1['url'];
-                        }
-                    ?>" alt="" title="profile">
-                </div>
+        $conn = new mysqli("localhost", "root", "","pickup");
+        $id = $_SESSION['id'];
+        $sql = "SELECT *from userinfo WHERE id = '$id' ";
+        $results = $conn->query($sql);
+        $rows = $results->fetch_assoc();
+        
+    ?>
+    <div class="dasboardContainer">
+        <div class="leftpaneContainer">
+            <div class="leftpane">
+                <img src="<?php 
+                    $myquery = "SELECT url from snapshot where id= '$id' ";
+                    $myresults = $conn->query($myquery);
+                    $myrows = $myresults->fetch_assoc();
+                    echo "../".$myrows['url'];
+                ?>" alt="">
+                <h3><?php echo $rows['fname'];  ?></h3>
+                <p><?php echo $rows['email'];  ?></p>
+                <p><?php echo $rows['vno'];  ?></p>
+                <p><?php echo $rows['pid'];  ?></p>
+                <form action="">
+                    <input type="submit" name="" value="Add User" id="adduser">
+                    <input type="submit" name="" value="Remove User">
+                </form>
+            </div>
+        </div>
+        <div class="rightpaneContainer">
+            <div class="rightpane">
                 <?php
-                echo "<h1 style=color:white;font-family:Arial;color:grey;font-size:25px;font-weight: normal;>".$rows['fname']."</h1>";
+                    $conn = new mysqli("localhost","root","","pickup");
+                    $sql = "select * from newuser";
+                    $results = $conn->query($sql);
+                    while($rows = $results->fetch_assoc()){
+                        ?>
+                        <div style="color:white;text-align:Center;">
+                            <p><?php echo $rows['fname']; ?></p>
+                            <p><?php echo $rows['email']; ?></p>
+                        </div>
+                        <?php
+                    }
                 ?>
             </div>
         </div>
     </div>
+    <div class="addUserContainer" id="newuser" style="display:none">
+        <form action="add.php" method="post">
+            <input type="name" name="fname" class="customisedInput" placeholder="Enter Name">
+            <input type="text" name="email" class="customisedInput" placeholder="Enter Email-ID">
+            
+            <input type="submit" name="" class="customisedInput" value="Submit">
+            <input type="submit" name="" class="customisedInput" value="Close" id="close">
+        </form>
+    </div>
+    <script type="text/javascript">
+        
+
+        let close = document.getElementById('close');
+        console.log(close);
+        close.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('newuser').style.display="none";
+        })
+        document.getElementById('adduser').addEventListener('click', function(e){
+            e.preventDefault()
+            document.getElementById('newuser').style.display="block";
+        })
+    </script>
 </body>
 </html>
