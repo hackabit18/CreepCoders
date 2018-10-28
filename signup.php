@@ -28,25 +28,26 @@
             <li class="floatRight"><a href="signup.php">Sign Up</a></li>
         </ul>
     </div>
-        <div class="signupMainContainer">
-            <div class="signupImage">
-                <div class="imageFrame" id="camera">
+    
+    <div class="signupMainContainer">
+        <div class="signupImage">
+            <div class="imageFrame" id="camera">
 
-                </div>
-            </div>
-            <div class="signupContainer">
-                <form action="signup/signup.php" method="post">
-                    <h1>Sign Up</h1>
-                    <input type="text" name="fname" placeholder="Full Name">
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Password">
-                    <input type="password" name="cnf" placeholder="Confirm Password">
-                    <input type="text" name="vno" placeholder="Vehicle Number">
-                    <input type="text" name="pid" placeholder="Product ID">
-                    <input type="submit" name="submit" value="Sign Up" id='take_snapshots'>
-                </form>
             </div>
         </div>
+        <div class="signupContainer">
+            <form action="signup/signup.php" method="post">
+                <h1>Sign Up</h1>
+                <input type="text" name="fname" placeholder="Full Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="cnf" placeholder="Confirm Password">
+                <input type="text" name="vno" placeholder="Vehicle Number">
+                <input type="text" name="pid" placeholder="Product ID">
+                <input type="submit" name="submit" value="Sign Up" id='take_snapshots'>
+            </form>
+        </div>
+    </div>
 
         
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

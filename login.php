@@ -30,14 +30,16 @@
         <div class="inputImage" id="camera">
         
         </div>
-        <form method="post" action="compare/compare.php">
-        <input type="submit" name="submit" value="Login">
-        </form>
+        <button id="take_snapshots" style="position: absolute;left:calc(50% - 80px);border-radius:10px;background:#f44283;border:none;outline:none;padding:5px 10px;font-weight:bolder;color:#fff;cursor:pointer;transform:translateX(-50%);top:calc(50% + 135px);z-index:100">Click Picture</button>
+        
         <div class="getStartClass">
             <p>- OR -</p>
             <a href="loginwithpass.php">Login Using Email-ID and Password</a>
         </div>
     </div>
+    <a href="compare/compare.php"><button id="login" style="position: absolute;z-index:11000;top:calc(50% + 215px);left:calc(50% + 80px);transform:translateX(-50%);border-radius:10px;background:#f44283;border:none;outline:none;padding:5px 20px;font-weight:bolder;color:#fff;cursor:pointer">Login</button></a>
+
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="jpeg_camera/jpeg_camera_with_dependencies.min.js" type="text/javascript"></script>
         <script>
@@ -52,7 +54,7 @@
             var snapshot = camera.capture();
             snapshot.show();
             
-            snapshot.upload({api_url: "action.php"}).done(function(response) {
+            snapshot.upload({api_url: "compare/action.php"}).done(function(response) {
         $('#imagelist').prepend("<tr><td><img src='"+response+"' width='100px' height='100px'></td><td>"+response+"</td></tr>");
         }).fail(function(response) {
         alert("Upload failed with status " + response);
